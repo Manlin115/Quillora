@@ -1,9 +1,9 @@
 {
-  "name": "quillora",
+  "name": "Quillora",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://manlin115.github.io/Quillora/",
+  "homepage": "https://Manlin115.github.io/Quillora/", 
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
