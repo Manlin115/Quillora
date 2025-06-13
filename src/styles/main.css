@@ -1,0 +1,204 @@
+/* Quillora - AI Text Simplifier
+ * A powerful tool that transforms complex text into clear, easy-to-understand explanations
+ * Features:
+ * - Paste any complex text (academic, medical, legal)
+ * - AI-powered instant simplification
+ * - Copy or download explanations
+ * - 5 free explanations per day
+ * - Secure login with Google/Email
+ */
+
+/* Base CSS Variables */
+:root {
+  /* Royal Theme Colors */
+  --color-sapphire: #0D1B2A;
+  --color-sapphire-light: #1B263B;
+  --color-royal: #4B0082;
+  --color-royal-light: #6A0DAD;
+  --color-gold: #FFD700;
+  --color-gold-light: #FFE55C;
+  --color-ivory: #FFFFF0;
+  --color-ivory-dim: rgba(255, 255, 240, 0.8);
+
+  /* Gradients */
+  --gradient-royal: linear-gradient(135deg, var(--color-sapphire) 0%, var(--color-sapphire-light) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-gold) 0%, var(--color-royal-light) 100%);
+  
+  /* Shadows */
+  --shadow-royal: 0 4px 20px rgba(75, 0, 130, 0.3);
+  --shadow-gold: 0 4px 20px rgba(255, 215, 0, 0.2);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Animations */
+  --transition-fast: 200ms ease-out;
+  --transition-normal: 300ms ease-out;
+  --transition-slow: 500ms ease-out;
+
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Poppins', var(--font-primary);
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--gradient-royal);
+  color: var(--color-ivory);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 2rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-ivory-dim);
+}
+
+/* Links */
+a {
+  color: var(--color-ivory);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-gold);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-royal);
+  color: var(--color-ivory);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-sapphire);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-royal);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-royal-light);
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--glass-bg);
+  border: var(--glass-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-glass);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.5s ease-out forwards;
+}
